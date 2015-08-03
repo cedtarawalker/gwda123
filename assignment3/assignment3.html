@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<title>Horoscope</title>
+</head>
+<body>
+
+<script>
+var name = prompt('What\'s your name?');
+var sign = prompt('What\'s your sign?');
+
+//wrap into h1
+document.write('<h1>Hello, ' + name + '</h1>');
+document.write('<h2> You are a ' + sign + '</h2>');
+
+if (sign.toLowerCase() == "aries"){
+	document.write("<img width='200' src='http://4vector.com/i/free-vector-zodiac-aries-clip-art_110034_Zodiac_Aries_clip_art_hight.png'>");
+}
+
+else if (sign.toLowerCase() == "scorpio"){
+	document.write("<img width='200' src='http://images.all-free-download.com/images/graphiclarge/zodiac_scorpio_clip_art_17380.jpg'>")
+}
+
+else if (sign.toLowerCase() == "taurus"){
+	document.write("<img width='200' src='http://www.vectors4all.net/preview/zodiac-taurus-clip-art.jpg'>")
+}
+
+else if (sign.toLowerCase() == "cancer"){
+	document.write("<img width='200' src='http://4vector.com/i/free-vector-zodiac-cancer-clip-art_110033_Zodiac_Cancer_clip_art_hight.png'>")
+}
+
+else if (sign.toLowerCase() == "pisces"){
+	document.write("<img width='200' src='http://www.clker.com/cliparts/7/f/1/4/12222772552136973744Pisces.svg.hi.png'>")
+}
+
+else if (sign.toLowerCase() == "aquarius"){
+	document.write("<img width='200' src='http://www.getsymbols.com/wp-content/uploads/2012/04/Aquarius-symbol.jpg'>")
+}
+
+else if (sign.toLowerCase() == "capricorn"){
+	document.write("<img width='200' src='http://images.all-free-download.com/images/graphiclarge/capricorn_clip_art_17374.jpg'>")
+}
+
+else if (sign.toLowerCase() == "gemini"){
+	document.write("<img width='200' src='http://www.clker.com/cliparts/1/f/c/f/12222772391191676953Gemini.svg.hi.png'>")
+}
+
+else if (sign.toLowerCase() == "leo"){
+	document.write("<img width='200' src='http://4vector.com/i/free-vector-zodiac-leo-clip-art_110030_Zodiac_Leo_clip_art_hight.png'>")
+}
+
+else if (sign.toLowerCase() == "virgo"){
+	document.write("<img width='200' src='https://conceptdraw.com/a1936c3/p15/preview/640/pict--virgo-sign-zodiac-constellations-vector-stencils-library'>")
+}
+
+else if (sign.toLowerCase() == "libra"){
+	document.write("<img width='200' src='http://images.all-free-download.com/images/graphicthumb/zodiac_libra_clip_art_17377.jpg'>")
+}
+
+else if (sign.toLowerCase() == "Sagittarius"){
+	document.write("<img width='200' src='http://4vector.com/i/free-vector-zodiac-sagittarius-sign-clip-art_110027_Zodiac_Sagittarius_Sign_clip_art_medium.png'>")
+}
+
+
+
+
+var today = new Date();
+//0 is equal to sunday, 1 is monday ect.
+//output a message "Happy monday" If it is monday
+if (today.getDay() == 1){
+	document.write("<h3>Happy Monday</h3>");
+}
+else if(today.getDay() == 2){
+	document.write("<h3>Troublesome Tuesday</h3>");
+}
+
+else if(today.getDay() == 3){
+	document.write("<h3>Worry Free Wednesday</h3>");
+}
+
+else if(today.getDay() == 4){
+	document.write("<h3>Thirsty Thursday</h3>");
+}
+
+else if(today.getDay() == 5){
+	document.write("<h3>French Fry Friday</h3>");
+}
+
+else if(today.getDay() == 6){
+	document.write("<h3>Sweet Saturday</h3>");
+}
+
+else if(today.getDay() == 0){
+	document.write("<h3>Sunburn Sunday</h3>");
+}
+
+</script>
+
+</body>
+
+</html>
