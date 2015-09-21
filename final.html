@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ArTopia Gallery</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<style>
+header {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	font-size: 72px;
+	line-height: 108px;
+	height: 108px;
+	background: #335C7D;
+	color: #fff;
+	font-family: 'PT Sans', sans-serif;
+ // set animation  -webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+header.sticky {
+	font-size: 24px;
+	line-height: 48px;
+	height: 48px;
+	background: #efc47D;
+	text-align: left;
+	padding-left: 20px;
+	transition: all 0.4s ease;
+}
+img {
+	display: inline-block;
+	margin-right: 20px;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+body {
+	text-align: center;
+}
+
+/*----- Accordion -----*/
+.accordion, .accordion * {
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+}
+ 
+.accordion {
+    overflow:hidden;
+    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+    border-radius:3px;
+    background:#f7f7f7;
+}
+ 
+/*----- Section Titles -----*/
+.accordion-section-title {
+    width:100%;
+    padding:15px;
+    display:inline-block;
+    border-bottom:1px solid #1a1a1a;
+    background:#333;
+    transition:all linear 0.15s;
+    /* Type */
+    font-size:1.200em;
+    text-shadow:0px 1px 0px #1a1a1a;
+    color:#fff;
+}
+ 
+.accordion-section-title.active, .accordion-section-title:hover {
+    background:#4c4c4c;
+    /* Type */
+    text-decoration:none;
+}
+ 
+.accordion-section:last-child .accordion-section-title {
+    border-bottom:none;
+}
+ 
+/*----- Section Content -----*/
+.accordion-section-content {
+    padding:15px;
+    display:none;
+}
+
+div.slideOutTab {
+    position: fixed;
+    width: 150px;
+    height: 43px;
+    top: 200px;
+    left: -107px;
+}
+
+div.slideOutTab a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-indent: -999em;
+    background: 0 0 url('http://s9.postimg.org/okyi00edn/fb_like_us.gif') no-repeat;
+}
+
+div.slideOutTab a:hover {
+    background-position: 0 -43px;
+}
+
+</style>
+</head>
+
+<body>
+<header>
+  <h1>ArTopia</h1>
+</header>
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+<img src="http://fillmurray.com/500/400">
+
+<div class="slideOutTab">
+    <a href="http://facebook.com">Like Us on Facebook</a>
+</div>
+
+
+<div class="accordion">
+    <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-1">Artists' profiles</a>
+         
+        <div id="accordion-1" class="accordion-section-content">
+            <p>Marcus</p>
+            <p>Pam</p>
+            <p>Steve</p>
+            <p>Tammy</p>
+            <p>Jamal</p>
+        </div><!--end .accordion-section-content-->
+    </div><!--end .accordion-section-->
+</div><!--end .accordion-->
+
+
+<div class="accordion">
+    <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-1">ATopia Events</a>
+         
+        <div id="accordion-1" class="accordion-section-content">
+            <p>Monday</p>
+            <p>tuesday</p>
+            <p>wednesday</p>
+            <p>Thursday</p>
+            <p>Friday</p>
+            <p>Saturday</p>
+            <p>sunday</p>
+        </div><!--end .accordion-section-content-->
+    </div><!--end .accordion-section-->
+</div><!--end .accordion-->
+
+
+<div class="accordion">
+    <div class="accordion-section">
+        <a class="accordion-section-title" href="#accordion-1">Accordion Submit Your Artwork</a>
+         
+        <div id="accordion-1" class="accordion-section-content">
+            <p>Here</p>
+        </div><!--end .accordion-section-content-->
+    </div><!--end .accordion-section-->
+</div><!--end .accordion-->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> 
+<script>
+
+jQuery(document).ready(function() {
+
+$(window).scroll(function() {
+if ($(this).scrollTop() > 1){  
+    $('header').addClass("sticky");
+  }
+  else{
+    $('header').removeClass("sticky");
+  }
+});
+
+
+$("img").hover(function(){
+
+		$(this).css("width", "400px");
+		},
+		function(){
+		$(this).css("width", "500px");
+		});
+
+$(document).ready(function() {
+    function close_accordion_section() {
+        $('.accordion .accordion-section-title').removeClass('active');
+        $('.accordion .accordion-section-content').slideUp(300).removeClass('open');
+    }
+ 
+    $('.accordion-section-title').click(function(e) {
+        // Grab current anchor value
+        var currentAttrValue = $(this).attr('href');
+ 
+        if($(e.target).is('.active')) {
+            close_accordion_section();
+        }else {
+            close_accordion_section();
+ 
+            // Add active class to section title
+            $(this).addClass('active');
+            // Open up the hidden content panel
+            $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+        }
+ 
+        e.preventDefault();
+    });
+});
+
+$(document).ready()
+$(function() {
+    
+    // This is a shortcut to bind both mouseOver and mouseOut
+    $('div.slideOutTab').hover(function() {
+        // Animate out when hovered, stopping all previous animations
+        $(this)
+            .stop(true, false)
+            .animate({
+                left: 0
+            }, 400);
+    }, function() {
+        // Animate back in when not hovered, stopping all previous animations
+        $(this)
+            .stop(true, false)
+            .animate({
+                left: -107
+            }, 400);
+    });
+    
+    
+});
+
+		
+});
+
+
+
+	
+
+
+
+</script>
+</body>
+</html>
